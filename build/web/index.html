@@ -1,15 +1,27 @@
-<!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
--->
 <html>
     <head>
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css"/>
     </head>
-    <body>
-        <div>TODO write content</div>
+    <body class="body" onload="loadUser();">
+        <h1>Home</h1>
+        <div class="div">
+            <div>Mobile : <span id="mobile"></span></div>
+        </div>
+        <div class="div">
+            <div>Name : <span id="name"></span></div>
+        </div>
+        <div class="div">
+            <div>Gender : <span id="gender"></span></div>
+        </div>
+        <div class="div">
+            <div>Country : <span id="country"></span></div>
+        </div>
+        <div class="div">
+            <button onclick="logout();">Logout</button>
+        </div>
+        <script src="js/script.js"></script>
     </body>
 </html>
