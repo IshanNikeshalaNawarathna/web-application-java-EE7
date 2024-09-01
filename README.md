@@ -38,14 +38,13 @@ The application handles JSON data using the GSON library. You can send and recei
 
 ### Example JSON Request in POST
 
-```json
+```bash
 function userRegistration() {
 
     var data = {
         name:"Ishan",
         country: "USA",
     }
-
     var ajax = new XMLHttpRequest();
     ajax.open("POST", "UserRegistration", true);
     ajax.setRequestHeader("Content-type", "application/json");
@@ -62,9 +61,10 @@ function userRegistration() {
     };
     ajax.send(JSON.stringify(data));
 }
+
 ```
 ### Example JSON Request in GET
-```json
+```bash
 function loadUser() {
 
     var ajax = new XMLHttpRequest();
