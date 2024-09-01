@@ -38,6 +38,7 @@ public class UserLogin extends HttpServlet {
             User users = userMap.get(user.getMobile());
 
             if (users.getPassword().equals(user.getPassword())) {
+                users.setPassword(null);
                 request.getSession().setAttribute("user", users);
                 jsonObject.addProperty("msg", "Success");
             } else {

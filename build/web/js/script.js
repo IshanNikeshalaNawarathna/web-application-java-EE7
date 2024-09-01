@@ -52,3 +52,26 @@ function userLogin() {
 function gotoRgistration() {
     window.location = "User_registration.html";
 }
+
+function logout() {
+    window.location = "logout";
+}
+
+function loadUser() {
+
+    var ajax = new XMLHttpRequest();
+    ajax.open("GET", "LoadUser", true);
+
+    ajax.onreadystatechange = function () {
+        if (ajax.readyState === 4 && ajax.status === 200) {
+            var user = JSON.parse(ajax.responseText);
+            document.getElementById("mobile").innerHTML = user.mobile;
+            document.getElementById("name").innerHTML = user.name;
+            document.getElementById("gender").innerHTML = user.gender;
+            document.getElementById("country").innerHTML = user.country;
+        }
+    };
+    ajax.send();
+
+
+}
