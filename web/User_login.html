@@ -5,42 +5,28 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
 -->
 <html>
     <head>
-        <title>USER REGISTRATION</title>
+        <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/style.css"/>
     </head>
     <body class="body">
-        <h1>User Registration</h1>
+        <h1>User Login</h1>
         <p class="text" id="error"></p>
         <div class="div">
             <div>Mobile</div>
             <input id="mobile"/>
         </div>
-        <div class="div">
-            <div>Name</div>
-            <input id="name"/>
-        </div>
-        <div class="div">
-            <div>Gender</div>
-            <input type="radio" name="gender" id="male"/> <span>Male</span>
-            <input type="radio" name="gender" id="female"/><span>Female</span>
-        </div>
-        <div class="div">
-            <div class="div">Country</div>
-            <select id="country">
-                <option>Sri Lanka</option>
-                <option>Australia</option>
-                <option>USA</option>
-                <option>UK</option>
-            </select>
-        </div>
+
         <div class="div">
             <div>Password</div>
             <input id="password" type="password"/>
         </div>
         <div class="div">
-            <button onclick="userRegistration();">Sign Up</button>
+            <button type="button" onclick="userLogin();">Login</button>
+        </div>
+        <div class="div">
+            <button type="button" onclick="gotoRgistration();">User Registration</button>
         </div>
         <script src="js/script.js"></script>
     </body>
