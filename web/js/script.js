@@ -1,13 +1,54 @@
 function userRegistration() {
 
     var data = {
-        mobile = "0767235819",
-        name = "Ishan"
+        mobile: document.getElementById("mobile").value,
+        name: document.getElementById("name").value,
+        geder: document.getElementById("male").checked ? "male" : "female",
+        country: document.getElementById("country").value,
+        password: document.getElementById("password").value,
     }
 
     var ajax = new XMLHttpRequest();
     ajax.open("POST", "UserRegistration", true);
-    ajax.setRequestHeader("Content-type", "application/json")
-    ajax.send(jSON.stringify(data));
+    ajax.setRequestHeader("Content-type", "application/json");
 
+    ajax.onreadystatechange = function () {
+        if (ajax.readyState === 4 && ajax.status === 200) {
+            var jsObject = JSON.parse(ajax.responseText);
+            if (jsObject.msg == "Success") {
+                window.location = "User_login.html";
+            } else {
+                document.getElementById("error").innerHTML = "Already have Account";
+            }
+        }
+    };
+    ajax.send(JSON.stringify(data));
+}
+
+function userLogin() {
+
+    var data = {
+        mobile: document.getElementById("mobile").value,
+        password: document.getElementById("password").value,
+    }
+
+    var ajax = new XMLHttpRequest();
+    ajax.open("POST", "UserLogin", true);
+    ajax.setRequestHeader("Content-type", "application/json");
+
+    ajax.onreadystatechange = function () {
+        if (ajax.readyState === 4 && ajax.status === 200) {
+            var jsObject = JSON.parse(ajax.responseText);
+            if (jsObject.msg == "Success") {
+                window.location = "index.html";
+            } else {
+                document.getElementById("error").innerHTML = "Invalid Mobile number and password";
+            }
+        }
+    };
+    ajax.send(JSON.stringify(data));
+
+}
+function gotoRgistration() {
+    window.location = "User_registration.html";
 }
